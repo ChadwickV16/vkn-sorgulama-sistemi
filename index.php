@@ -19,8 +19,9 @@
         foreach ($vd[1] as $fetch) {
 
             $replace = str_replace('<span style="color: black;">VERGİ</span>', 'VERGİ', $fetch);
+            $replace = str_replace('    ', ' ', $replace);
 
-            echo '<option value="' . $replace . '">' . $replace . '</option>';
+            echo '<option value="' . trim($replace) . '">' . trim($replace) . '</option>';
 
         }
         ?>
