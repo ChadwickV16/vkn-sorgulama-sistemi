@@ -14,14 +14,12 @@
     <select name="vd">
         <option selected disabled>-Vergi Dairesi-</option>
         <?php
-        preg_match_all('@<td>(.*?)</td>@si', curl_get('https://test.bugraozkan.com.tr/vkn'), $vd);
+        $get = curl_get('https://test.bugraozkan.com.tr/vkn/vd.php');
+        $decode = json_decode($get, true);
 
-        foreach ($vd[1] as $fetch) {
+        foreach ($decode['vd'] as $fetch) {
 
-            $replace = str_replace('<span style="color: black;">VERGİ</span>', 'VERGİ', $fetch);
-            $replace = str_replace('    ', ' ', $replace);
-
-            echo '<option value="' . trim($replace) . '">' . trim($replace) . '</option>';
+            echo '<option value="' . $fetch . '">' . $fetch . '</option>';
 
         }
         ?>
