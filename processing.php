@@ -61,7 +61,7 @@ if (isset($_POST['sorgula'])) {
             'vd' => $_POST['vd']
         ];
 
-        $post = curl_post('https://test.bugraozkan.com.tr/vkn/api.php', $data);
+        $post = curl_post('https://www.my-api.tk/vkn.php', $data);
         $decode = json_decode($post, true);
 
         if ($decode['hata'] == 1) {
@@ -70,7 +70,7 @@ if (isset($_POST['sorgula'])) {
 
         } else {
 
-            echo '<b>Durum:</b> ' . $decode['veri']['durum'] . ' - <b>Ünvan:</b> ' . $decode['veri']['unvan'];
+            echo '<b>Durum:</b> ' . $decode['data']['status'] . ' - <b>Ünvan:</b> ' . $decode['data']['title'];
 
         }
 
