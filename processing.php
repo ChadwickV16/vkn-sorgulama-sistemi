@@ -64,9 +64,9 @@ if (isset($_POST['sorgula'])) {
         $post = curl_post('https://www.my-api.tk/vkn.php', $data);
         $decode = json_decode($post, true);
 
-        if ($decode['hata'] == 1) {
+        if ($decode['error'] == 1) {
 
-            echo $decode['mesaj'];
+            echo $decode['message'];
 
         } else {
 
