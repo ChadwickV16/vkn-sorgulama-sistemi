@@ -14,7 +14,7 @@
     <select name="vd">
         <option selected disabled>-Vergi Dairesi-</option>
         <?php
-        $get = curl_get('https://www.my-api.tk/vd.php');
+        $get = curl_get('https://www.my-api.co/vd.php');
         $decode = json_decode($get, true);
 
         foreach ($decode['vd'] as $fetch) {
