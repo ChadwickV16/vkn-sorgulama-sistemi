@@ -61,7 +61,7 @@ if (isset($_POST['sorgula'])) {
             'vd' => $_POST['vd']
         ];
 
-        $post = curl_post('https://www.my-api.tk/vkn.php', $data);
+        $post = curl_post('https://www.my-api.co/vkn.php', $data);
         $decode = json_decode($post, true);
 
         if ($decode['error'] == 1) {
